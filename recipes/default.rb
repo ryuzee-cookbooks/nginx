@@ -20,6 +20,13 @@ when "centos", "redhat", "amazon", "scientific", "fedora"
     action :install
   end
 
+  directory "/etc/nginx/conf.d/server" do
+    action :create
+    owner 'root'
+    group 'root'
+    mode '0755'
+  end
+
   template 'default.conf' do
     path '/etc/nginx/conf.d/default.conf'
     source 'default.conf.erb'
