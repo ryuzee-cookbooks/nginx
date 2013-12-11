@@ -20,6 +20,15 @@ when "centos", "redhat", "amazon", "scientific", "fedora"
     action :install
   end
 
+  template 'default.conf' do
+    path '/etc/nginx/conf.d/default.conf'
+    source 'default.conf.erb'
+    owner 'root'
+    group 'root'
+    mode '0644'
+    notifies :restart, "service[nginx]"
+  end
+
   service "nginx" do
     action [:enable, :start]
   end
