@@ -15,5 +15,6 @@ platforms:
 suites:
 - name: default
   run_list: 
+    - "recipe[ca-certificates::default]"
     - "recipe[nginx::default]"
   attributes: {}
