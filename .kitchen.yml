@@ -8,9 +8,9 @@ busser:
   sudo: true
 
 platforms:
-  - name: centos-6.4
+  - name: centos-6.5
     driver_config:
-      image: ryuzee/centos_chef:6.4
+      image: ryuzee/centos:6.5
 
 suites:
 - name: default
